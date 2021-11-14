@@ -1,36 +1,30 @@
-// TODO: Include packages needed for this application
-// DONE
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-// DONE
 const questions = [
     "Provide project title",
     "Provide a short description of your project",
     "Provide project installation steps",
     "Provide usage of project",
     "Provide credits",
-    "Provide license", //List of options
+    "Provide license",
     "Provide features",
     "Provide how to contribute",
     "Provide tests",
-    "Enter github username", //last two used for Questions section
-    "Enter email address"
+    "Enter github username", 
+    "Enter email address",
+    "Enter full name",
+    "Enter current year"
 ];
 
-// TODO: Create a function to write README file
-// DONE
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log("Success!")
     );
 }
 
-// TODO: Create a function to initialize app
 function init() {
-//Call inquirer to prompt user for input
     inquirer
         .prompt([
             {
@@ -62,7 +56,7 @@ function init() {
                 type: "list",
                 name: "license",
                 message: questions[5],
-                choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'BSD-4-Clause', 'None'],
+                choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'None'],
             },
             {
                 type: "input",
@@ -88,6 +82,16 @@ function init() {
                 type: "input",
                 name: "email",
                 message: questions[10],
+            },
+            {
+                type: "input",
+                name: "fullName",
+                message: questions[11],
+            },
+            {
+                type: "input",
+                name: "currentYear",
+                message: questions[12],
             },
         ])
         .then((data) => {
