@@ -91,14 +91,9 @@ function init() {
             },
         ])
         .then((data) => {
-            console.log(data);
-            // const{title} = data;
-            // const{description} = data;
-
+           const markdown =  generateMarkdown(data);
+           writeToFile("testREADME.md", markdown);
         });
-//Use generateMarkdown js file to create markdown
-//Call writeToFile to create readme file
-
 }
 
 // Function call to initialize app
