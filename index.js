@@ -96,7 +96,7 @@ function init() {
         ])
         .then((data) => {
            const markdown =  generateMarkdown(data);
-           writeToFile("testREADME.md", markdown);
+           writeToFile("generatedREADME.md", markdown);
         });
 }
 
