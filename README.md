@@ -8,3 +8,4 @@ The objective of this project was to create a high-quality README generator. Thi
 
 The user launches the application by using the command `node index.js` in their terminal. The user is then presented with a series of prompts where they can enter the information that will be displayed on the generated README file.
 
+![](./assets/README Generator Tutorial.mov)
